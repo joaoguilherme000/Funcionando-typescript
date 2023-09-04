@@ -1,17 +1,39 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Imagem from "./foto.jpg";
-import Botao from "./Botao";
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>clique na foto</Text>
       <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("FotoPage")}
+        style={styles.button}
+        onPress={() => navigation.navigate("Pagina1")}
       >
-        <Image source={Imagem} style={styles.buttonImage} />
+        <Text>MUDAR PARA A PAGINA 1</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Pagina2")}
+      >
+        <Text>MUDAR PARA A PAGINA 2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Pagina3")}
+      >
+        <Text>MUDAR PARA A PAGINA 3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Pagina4")}
+      >
+        <Text>MUDAR PARA A PAGINA 4</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Pagina5")}
+      >
+        <Text>MUDAR PARA A PAGINA 5</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
@@ -25,14 +47,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonContainer: {
-    margin: 20,
-    alignSelf: "center",
+  button: {
+    justifyContent: "center",
     alignItems: "center",
-  },
-  buttonImage: {
-    borderRadius: 15,
-    width: 350, // Defina o tamanho da imagem conforme necessário
-    height: 350, // Defina o tamanho da imagem conforme necessário
+    backgroundColor: "#121212",
+    margin: 20,
+    borderRadius: 10,
+    height: "8%",
+    width: "95%",
   },
 });

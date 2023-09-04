@@ -1,6 +1,12 @@
 import Home from "./src/components/Home";
 import FotoPage from "./src/components/FotoPage";
-import { StyleSheet } from "react-native";
+import Pagina1 from "./src/components/Pagina1";
+import Pagina2 from "./src/components/Pagina2";
+import Pagina3 from "./src/components/Pagina3";
+import Pagina4 from "./src/components/Pagina4";
+import Pagina5 from "./src/components/Pagina5";
+
+import { StyleSheet, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -30,7 +36,7 @@ export default function App() {
           cardStyleInterpolator: deslizar,
           headerTitleAlign: "center",
         }}
-        initialRouteName="HomeComponent"
+        initialRouteName="Home"
       >
         <Stack.Screen
           screenOptions={{
@@ -40,7 +46,25 @@ export default function App() {
           name="Pagina inicial"
           component={Home}
         />
-        <Stack.Screen name="FotoPage" component={FotoPage} />
+        <Stack.Screen
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <Button
+                title="Início"
+                onPress={() => {
+                  navigation.navigate("Pagina inicial");
+                }}
+              />
+            ),
+          })}
+          name="FotoPage"
+          component={FotoPage}
+        />
+        <Stack.Screen name="Pagina1" component={Pagina1} />
+        <Stack.Screen name="Pagina2" component={Pagina2} />
+        <Stack.Screen name="Pagina3" component={Pagina3} />
+        <Stack.Screen name="Pagina4" component={Pagina4} />
+        <Stack.Screen name="Pagina5" component={Pagina5} />
       </Stack.Navigator>
     </NavigationContainer>
   );
