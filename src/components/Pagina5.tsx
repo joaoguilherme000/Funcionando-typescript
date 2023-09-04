@@ -1,38 +1,37 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import Imagem from "./foto.jpg";
-import Botao from "./Botao";
+import { Text, SafeAreaView, StyleSheet } from "react-native";
+import { useState, useEffect } from "react";
 
-export default function Pagina5({ navigation }) {
+import SplashComponent from "./SplashComponent";
+
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simular um carregamento demorado
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 12000); // Tempo em milissegundos
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>clique na foto</Text>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("FotoPage")}
-      >
-        <Image source={Imagem} style={styles.buttonImage} />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      {isLoading ? (
+        <SplashComponent />
+      ) : (
+        <Text style={styles.mainText}>Seu conteúdo principal aqui</Text>
+      )}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
     justifyContent: "center",
   },
-  buttonContainer: {
-    margin: 20,
+  mainText: {
+    justifyContent: "center",
+    fontSize: 20,
     alignSelf: "center",
-    alignItems: "center",
-  },
-  buttonImage: {
-    borderRadius: 15,
-    width: 350, // Defina o tamanho da imagem conforme necessário
-    height: 350, // Defina o tamanho da imagem conforme necessário
   },
 });
