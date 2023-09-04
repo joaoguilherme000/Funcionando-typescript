@@ -1,20 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Home from "./src/components/Home";
+import FotoPage from "./src/components/FotoPage";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
+
+const deslizar = ({ current, next, layouts }) => {
+  const translateX = current.progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [layouts.screen.width, 0],
+  });
+
+  const slideFromRight = { transform: [{ translateX }] };
+
+  return {
+    cardStyle: slideFromRight,
+  };
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: "#262626" },
+          headerShadowVisible: false,
+          headerTitleStyle: { color: "#f4a100" },
+          cardStyleInterpolator: deslizar,
+          headerTitleAlign: "center",
+        }}
+        initialRouteName="HomeComponent"
+      >
+        <Stack.Screen
+          screenOptions={{
+            gestureEnabled: true,
+            gestureDirection: "vertical",
+          }}
+          name="Pagina inicial"
+          component={Home}
+        />
+        <Stack.Screen name="FotoPage" component={FotoPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
