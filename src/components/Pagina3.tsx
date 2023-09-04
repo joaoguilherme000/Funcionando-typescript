@@ -51,7 +51,7 @@ const Pagina3 = () => {
 const styles = StyleSheet.create({
   itemContainer: {
     padding: 16,
-    backgroundColor: "#ff0000",
+    backgroundColor: "#3a3a3a",
   },
   image: {
     width: "100%",
