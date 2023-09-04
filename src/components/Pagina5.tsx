@@ -1,24 +1,32 @@
-import { Text, SafeAreaView, StyleSheet } from "react-native";
+import { Text, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { useState, useEffect } from "react";
 
 import SplashComponent from "./SplashComponent";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [rerunEffect, setRerunEffect] = useState(false);
 
   useEffect(() => {
     // Simular um carregamento demorado
     setTimeout(() => {
       setIsLoading(false);
     }, 12000); // Tempo em milissegundos
-  }, []);
+  }, [rerunEffect]);
+
+  const again = () => {
+    setIsLoading(true);
+    setRerunEffect(!rerunEffect); // Atualize o estado rerunEffect para acionar o useEffect novamente
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       {isLoading ? (
         <SplashComponent />
       ) : (
-        <Text style={styles.mainText}>Seu conteúdo principal aqui</Text>
+        <TouchableOpacity onPress={again}>
+          <Text style={styles.mainText}>EXECUTAR DE NOVO</Text>
+        </TouchableOpacity>
       )}
     </SafeAreaView>
   );
