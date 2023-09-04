@@ -1,37 +1,64 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import Imagem from "./foto.jpg";
+import { SafeAreaView, StyleSheet, ScrollView, Text, View } from "react-native";
 
-export default function Pagina2({ navigation }) {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>clique na foto</Text>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("FotoPage")}
-      >
-        <Image source={Imagem} style={styles.buttonImage} />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.tudo}>
+      <ScrollView horizontal style={styles.container1}>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+      </ScrollView>
+      <View style={styles.divisa}>
+        <Text>DIVISA</Text>
+      </View>
+      <ScrollView vertical style={styles.container2}>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+        <Text style={styles.tamanho}>Testando</Text>
+      </ScrollView>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  tudo: {
+    marginTop: "9%",
+    backgroundColor: "blue",
   },
-  buttonContainer: {
-    margin: 20,
+  container1: {
+    backgroundColor: "#009bc2",
+    height: "30%",
+  },
+  container2: {
+    backgroundColor: "#f78401",
+    height: "70%",
+  },
+  tamanho: {
+    fontSize: 67,
+    margin: 15,
     alignSelf: "center",
-    alignItems: "center",
   },
-  buttonImage: {
-    borderRadius: 15,
-    width: 350, // Defina o tamanho da imagem conforme necessário
-    height: 350, // Defina o tamanho da imagem conforme necessário
+  divisa: {
+    height: "5%",
+    alignItems: "center", // horizontal
+    justifyContent: "center", //vertical
+    width: "100%",
+    backgroundColor: "red",
   },
 });
+
+export default App;

@@ -9,31 +9,31 @@ export default function Home({ navigation }) {
         style={styles.button}
         onPress={() => navigation.navigate("Pagina1")}
       >
-        <Text>MUDAR PARA A PAGINA 1</Text>
+        <Text>PAGINA 1</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Pagina2")}
       >
-        <Text>MUDAR PARA A PAGINA 2</Text>
+        <Text>PAGINA 2</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Pagina3")}
       >
-        <Text>MUDAR PARA A PAGINA 3</Text>
+        <Text>PAGINA 3</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Pagina4")}
       >
-        <Text>MUDAR PARA A PAGINA 4</Text>
+        <Text>PAGINA 4</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Pagina5")}
       >
-        <Text>MUDAR PARA A PAGINA 5</Text>
+        <Text>PAGINA 5</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
