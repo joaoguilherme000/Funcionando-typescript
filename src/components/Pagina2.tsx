@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, ScrollView, Text, View } from "react-native";
 
-const App = () => {
+const Pagina2 = () => {
   return (
     <SafeAreaView style={styles.tudo}>
       <ScrollView horizontal style={styles.container1}>
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Pagina2;

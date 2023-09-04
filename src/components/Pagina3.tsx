@@ -1,37 +1,62 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import Imagem from "./foto.jpg";
+import React from "react";
+import { View, Text, FlatList, StyleSheet, Image } from "react-native";
+import Imagem from "./foto2.jpg";
 
-export default function Pagina3({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text>clique na foto</Text>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("FotoPage")}
-      >
-        <Image source={Imagem} style={styles.buttonImage} />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
-  );
+interface Item {
+  id: string;
+  imageUrl: any;
 }
 
+const data: Item[] = [
+  { id: "1", imageUrl: require("./foto2.jpg") },
+  { id: "2", imageUrl: require("./foto2.jpg") },
+  { id: "3", imageUrl: require("./foto2.jpg") },
+  { id: "4", imageUrl: require("./foto2.jpg") },
+  { id: "5", imageUrl: require("./foto2.jpg") },
+  { id: "6", imageUrl: require("./foto2.jpg") },
+  { id: "7", imageUrl: require("./foto2.jpg") },
+  { id: "8", imageUrl: require("./foto2.jpg") },
+  { id: "9", imageUrl: require("./foto2.jpg") },
+  { id: "10", imageUrl: require("./foto2.jpg") },
+  { id: "11", imageUrl: require("./foto2.jpg") },
+  { id: "12", imageUrl: require("./foto2.jpg") },
+  { id: "13", imageUrl: require("./foto2.jpg") },
+  { id: "14", imageUrl: require("./foto2.jpg") },
+  { id: "15", imageUrl: require("./foto2.jpg") },
+  { id: "16", imageUrl: require("./foto2.jpg") },
+  { id: "17", imageUrl: require("./foto2.jpg") },
+  { id: "18", imageUrl: require("./foto2.jpg") },
+];
+
+const renderItem = ({ item }: { item: Item }) => (
+  <View style={styles.itemContainer}>
+    <Image source={item.imageUrl} style={styles.image} />
+  </View>
+);
+
+const Pagina3 = () => {
+  return (
+    <View>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        scrollIndicatorStyle="#f80404"
+        scrollIndicatorInsets={{ right: 10 }}
+      />
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  itemContainer: {
+    padding: 16,
+    backgroundColor: "#ff0000",
   },
-  buttonContainer: {
-    margin: 20,
-    alignSelf: "center",
-    alignItems: "center",
-  },
-  buttonImage: {
-    borderRadius: 15,
-    width: 350, // Defina o tamanho da imagem conforme necessário
-    height: 350, // Defina o tamanho da imagem conforme necessário
+  image: {
+    width: "100%",
+    height: 100,
   },
 });
+
+export default Pagina3;
