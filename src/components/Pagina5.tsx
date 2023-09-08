@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import SplashComponent from "./SplashComponent";
 
-export default function App() {
+export default function Pagina5() {
   const [isLoading, setIsLoading] = useState(true);
   const [rerunEffect, setRerunEffect] = useState(false);
 

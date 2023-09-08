@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const App = () => {
+const Pagina4 = () => {
   const [texto, setTexto] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -130,4 +130,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Pagina4;
