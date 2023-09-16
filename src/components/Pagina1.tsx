@@ -15,7 +15,7 @@ export default function Pagina1({ navigation }) {
       <Text>clique na foto</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate("FotoPage")}
+        onPress={() => navigation.navigate("Resultados")}
       >
         <Image source={Imagem} style={styles.buttonImage} />
       </TouchableOpacity>
