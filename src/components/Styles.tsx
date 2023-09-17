@@ -5,6 +5,18 @@ const Styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  buttonConfig: {
+    backgroundColor: "#b6b6b6",
+    width: '30%',
+    height: 33,
+    padding: 3,
+    borderRadius: 26,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  config:{
+    fontSize: 15,
+  },
   informaçao: {
     paddingTop: 15,
   },
@@ -15,17 +27,20 @@ const Styles = StyleSheet.create({
   text: {
     fontSize: 20,
   },
+  horizontal:{
+    flexDirection: 'row',
+    marginTop: "2%",
+  },
   principal:{
-    backgroundColor: "#00f8006a",
+    backgroundColor: "#75ff75",
     flexDirection: 'row',
     marginTop: "2%",
     paddingBottom: 2,
     borderBottomWidth: 1,
     borderColor: 'gray'
   },
-  horizontal:{
-    flexDirection: 'row',
-    marginTop: "2%",
+  vermelho: {
+    backgroundColor: "#ff7a7a",
   },
 });
 
