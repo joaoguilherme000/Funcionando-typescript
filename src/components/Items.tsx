@@ -16,6 +16,16 @@ export default function Items () {
         { id: "3", nome: "Guarana", preço: 15 },
         { id: "4", nome: "Cerveja", preço: 30 },
         { id: "5", nome: "Vodka", preço: 8 },
+        { id: "6", nome: "nome 6", preço: 9 },
+        { id: "7", nome: "nome 7", preço: 1 },
+        { id: "8", nome: "nome 8", preço: 2 },
+        { id: "9", nome: "nome 9", preço: 3 },
+        { id: "10", nome: "nome 10", preço: 4 },
+        { id: "11", nome: "nome 11", preço: 5 },
+        { id: "12", nome: "nome 12", preço: 6 },
+        { id: "13", nome: "nome 13", preço: 88 },
+        { id: "14", nome: "nome 14", preço: 99 },
+        { id: "15", nome: "nome 15", preço: 14 },
         // Adicione outros
     ]);
 
