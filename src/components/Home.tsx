@@ -1,11 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
+import Styles from "./Styles";
 
 export default function Home({ navigation }) {
   return (
-    <View style={styles.container}>
+    <View style={Styles.container}>
       <TouchableOpacity
-        style={styles.button}
+        style={Styles.button}
         onPress={() => navigation.navigate("Resultados")}
       >
         <Text>Resultados</Text>
@@ -14,22 +15,3 @@ export default function Home({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-  },
-  button: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderWidth: 1,
-    borderColor: '#000',
-    borderRadius: 10,
-    marginTop: 99,
-    height: 50,
-    width: "95%",
-  },
-});

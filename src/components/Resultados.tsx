@@ -1,51 +1,15 @@
 import React from "react"
 import { View } from "react-native";
-import Nome from "./Nome";
-import Preço from "./Preço";
-import ImageProduto from "./ImageProduto";
-import Styles from "./Styles";
+import Items from "./Items";
 import Config from "./Config";
 
 export default function Resultados({ navigation }) {
 
   return (
     <View style={{ flex: 1, padding: 0 }}>
+      {/* O botão de ordenar abaixo se chama config e os items sao os que aparecem na tela com foto e tudo mais*/}
       <Config/>
-      <View style={Styles.principal}>
-        <ImageProduto/>
-        <View style={Styles.informaçao}>
-          <Nome/>
-          <Preço/>
-        </View>
-      </View>
-      <View style={Styles.horizontal}>
-        <ImageProduto/>
-        <View style={Styles.informaçao}>
-          <Nome/>
-          <Preço/>
-        </View>
-      </View>
-      <View style={Styles.horizontal}>
-        <ImageProduto/>
-        <View style={Styles.informaçao}>
-          <Nome/>
-          <Preço/>
-        </View>
-      </View>
-      <View style={Styles.horizontal}>
-        <ImageProduto/>
-        <View style={Styles.informaçao}>
-          <Nome/>
-          <Preço/>
-        </View>
-      </View>
-      <View style={[Styles.horizontal, Styles.vermelho]}>
-        <ImageProduto/>
-        <View style={Styles.informaçao}>
-          <Nome/>
-          <Preço/>
-        </View>
-      </View>
+      <Items/>
     </View>
   );
 }
