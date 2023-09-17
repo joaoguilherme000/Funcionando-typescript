@@ -6,9 +6,9 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Pagina1")}
+        onPress={() => navigation.navigate("Resultados")}
       >
-        <Text>PAGINA 1</Text>
+        <Text>Resultados</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>

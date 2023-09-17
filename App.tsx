@@ -1,6 +1,5 @@
 import Home from "./src/components/Home";
 import Resultados from "./src/components/Resultados";
-import Pagina1 from "./src/components/Pagina1";
 
 import { StyleSheet, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -34,7 +33,6 @@ export default function App() {
       >
         <Stack.Screen name="Pagina inicial" component={Home} />
         <Stack.Screen name="Resultados" component={Resultados} />
-        <Stack.Screen name="Pagina1" component={Pagina1} />
       </Stack.Navigator>
     </NavigationContainer>
   );
