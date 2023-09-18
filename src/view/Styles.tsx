@@ -24,11 +24,19 @@ const Styles = StyleSheet.create({
     height: 33,
     padding: 3,
     borderRadius: 26,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   config:{
     fontSize: 15,
+  },
+  ordenado: {
+    borderColor: "#f44",
+    borderWidth: 1,
+    padding: 5,
+    fontSize: 15,
+    flex: 2,
   },
   informaçao: {
     paddingTop: 15,
