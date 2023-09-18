@@ -11,6 +11,12 @@ export default function Home({ navigation }) {
       >
         <Text>Resultados</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={Styles.button}
+        onPress={() => navigation.navigate("Camera")}
+      >
+        <Text>Camera</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
