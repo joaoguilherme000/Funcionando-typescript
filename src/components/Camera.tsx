@@ -3,11 +3,15 @@ import { Camera, CameraType } from 'expo-camera';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function CameraComponent() {
-  const [type, setType] = useState(CameraType.back);
+  const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
 
   function toggleCameraType() {
-    setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+    setType(current =>
+      current === Camera.Constants.Type.back
+        ? Camera.Constants.Type.front
+        : Camera.Constants.Type.back
+    );
   }
 
   return (
