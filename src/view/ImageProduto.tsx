@@ -1,6 +1,5 @@
-import * as react from "react";
 import { Image } from "react-native";
-import Imagem from "./coca.jpg"; 
+import Imagem from "../assets/coca.jpg"; 
 
 
 export default function ImageProduto() {

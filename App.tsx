@@ -1,4 +1,4 @@
-import Home from "./src/components/Home";
+import Home from "./src/view/Home";
 import Resultados from "./src/components/Resultados";
 
 import { StyleSheet, Button } from "react-native";
@@ -32,6 +32,7 @@ export default function App() {
         initialRouteName="Home"
       >
         <Stack.Screen name="Pagina inicial" component={Home} />
+
         <Stack.Screen name="Resultados" component={Resultados} />
       </Stack.Navigator>
     </NavigationContainer>

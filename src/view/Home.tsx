@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import Styles from "./Styles";
 
 export default function Home({ navigation }) {

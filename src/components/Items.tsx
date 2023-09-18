@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, FlatList, Image, View } from "react-native";
-import Styles from "./Styles";
-import ImageProduto from "./ImageProduto";
+import Styles from "../view/Styles";
+import ImageProduto from "../view/ImageProduto";
 
 export default function Items () {
     interface Produto {
