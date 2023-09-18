@@ -32,10 +32,7 @@ const Styles = StyleSheet.create({
     fontSize: 15,
   },
   ordenado: {
-    borderColor: "#f44",
-    borderWidth: 1,
-    padding: 5,
-    fontSize: 15,
+    padding: 7,
     flex: 2,
   },
   informaçao: {
