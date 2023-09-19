@@ -1,9 +1,9 @@
 import Home from "./src/view/Home";
 import Resultados from "./src/components/Resultados";
-import Camera from "./src/components/Camera";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import TelaCamera from "./src/view/TelaCamera";
 
 const Stack = createStackNavigator();
 
@@ -33,7 +33,7 @@ export default function App() {
       >
         <Stack.Screen name="Pagina inicial" component={Home} />
         <Stack.Screen name="Resultados" component={Resultados} />
-        <Stack.Screen name="Camera" component={Camera} />
+        <Stack.Screen name="TelaCamera" component={TelaCamera} />
       </Stack.Navigator>
     </NavigationContainer>
   );

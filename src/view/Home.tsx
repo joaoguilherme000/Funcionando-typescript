@@ -13,7 +13,7 @@ export default function Home({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={Styles.button}
-        onPress={() => navigation.navigate("Camera")}
+        onPress={() => navigation.navigate("TelaCamera")}
       >
         <Text>Camera</Text>
       </TouchableOpacity>

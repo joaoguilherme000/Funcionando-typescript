@@ -42,7 +42,7 @@ const Styles = StyleSheet.create({
     width: '25%',
     height: 100, 
   },
-  text: {
+  texto: {
     fontSize: 20,
   },
   horizontal:{
@@ -60,6 +60,7 @@ const Styles = StyleSheet.create({
   vermelho: {
     backgroundColor: "#ff7a7a",
   },
+
 });
 
 export default Styles;

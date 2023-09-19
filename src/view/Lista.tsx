@@ -21,12 +21,12 @@ const data: Category[] = [
     { key: '12', category: 'Produtos para Animais de Estimação' },
   ];
 
-const Lista: React.FC = () => {
+const Lista = () => {
   const renderCategoryChips = ({ item }: { item: Category }) => {
     return (
     <TouchableOpacity>
         <View style={styles.chip}>
-            <Text style={styles.text}>{item.category}</Text>
+            <Text style={styles.texto}>{item.category}</Text>
         </View>
     </TouchableOpacity>
     );
