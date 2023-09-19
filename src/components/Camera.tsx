@@ -1,55 +1,69 @@
-import React, { useState } from 'react';
-import { Camera, CameraType } from 'expo-camera';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useState, useEffect, useRef } from 'react';
+import { StyleSheet, View, Text, SafeAreaView, TouchableOpacity, Modal, Image } from 'react-native';
+import { Camera } from 'expo-camera';
+import { FontAwesome } from "@expo/vector-icons";
+import { CameraType } from 'expo-camera';
+import Styles from "../view/Styles";
+import Lista from '../view/Lista';
 
-export default function CameraComponent() {
-  const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
-  const [permission, requestPermission] = Camera.useCameraPermissions();
+export default function App() {
+    const camRef = useRef<Camera>(null);
+    const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
+    const [hasPermission, setHasPermission] = useState<boolean | null>(null);
+    const [open, setOpen] = useState<boolean>(false);
+    const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null);
 
-  function toggleCameraType() {
-    setType(current =>
-      current === Camera.Constants.Type.back
-        ? Camera.Constants.Type.front
-        : Camera.Constants.Type.back
+    useEffect(() => {
+        (async () => {
+            const { status } = await Camera.requestCameraPermissionsAsync();
+            setHasPermission(status === 'granted');
+        })();
+    }, []);
+
+    if (hasPermission === null) {
+        return <View />;
+    }
+    if (hasPermission === false) {
+        return <Text style={Styles.text}>Não tem permissão para acessar a câmera</Text>;
+    }
+
+    async function takePicture() {
+        if (camRef.current) {
+            const data = await camRef.current.takePictureAsync();
+            setCapturedPhoto(data.uri);
+            setOpen(true);
+            console.log(data);
+        }
+    }
+
+    return (
+        <SafeAreaView style={styles.container}>
+            <Camera
+                style={{ flex: 9, height: '70%', width: '100%' }}
+                type={type}
+                ref={camRef}
+            >
+                <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}>
+                    <TouchableOpacity style={{ position: 'absolute', bottom: 20, left: 20 }}
+                        onPress={() => {
+                            setType(
+                                type === Camera.Constants.Type.back
+                                    ? Camera.Constants.Type.front
+                                    : Camera.Constants.Type.back);
+                        }}>
+                        <FontAwesome name="sort" size={23} color='#FFF' />
+                    </TouchableOpacity>
+                </View>
+            </Camera>
+            <Lista/>
+        </SafeAreaView>
     );
-  }
-
-  return (
-    <View style={styles.container}>
-      <Camera style={styles.camera} type={type}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
-            <Text style={styles.text}>Flip Camera</Text>
-          </TouchableOpacity>
-        </View>
-      </Camera>
-    </View>
-  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  camera: {
-    flex: 1,
-    width: '100%',
-  },
-  buttonContainer: {
-    position: 'absolute',
-    bottom: 20,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-  },
-  button: {
-    backgroundColor: 'blue',
-    padding: 10,
-    borderRadius: 5,
-  },
-  text: {
-    color: 'white',
-  },
+    container: {
+        flex: 9,
+        backgroundColor: '#ffffff',
+        alignItems: 'center',
+    },
 });

@@ -2,7 +2,6 @@ import Home from "./src/view/Home";
 import Resultados from "./src/components/Resultados";
 import Camera from "./src/components/Camera";
 
-import { StyleSheet, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
