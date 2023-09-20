@@ -4,6 +4,7 @@ import Resultados from "./src/components/Resultados";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import TelaCamera from "./src/view/TelaCamera";
+import Splash from "./src/view/Splash";
 
 const Stack = createStackNavigator();
 
@@ -29,9 +30,10 @@ export default function App() {
           cardStyleInterpolator: deslizar,
           headerTitleAlign: "center",
         }}
-        initialRouteName="Home"
+        initialRouteName="Splash"
       >
         <Stack.Screen name="Pagina inicial" component={Home} />
+        <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Resultados" component={Resultados} />
         <Stack.Screen name="TelaCamera" component={TelaCamera} />
       </Stack.Navigator>
