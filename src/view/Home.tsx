@@ -1,23 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { Text, View, TouchableOpacity } from "react-native";
-import Styles from "./Styles";
+import Lista from '../view/Lista';
+import CameraComponent from "../components/CameraComponent";
 
-export default function Home({ navigation }) {
+
+export default function TelaCamera() {
   return (
-    <View style={Styles.container}>
-      <TouchableOpacity
-        style={Styles.button}
-        onPress={() => navigation.navigate("Resultados")}
-      >
-        <Text>Resultados</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={Styles.button}
-        onPress={() => navigation.navigate("TelaCamera")}
-      >
-        <Text>Camera</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <>
+        <CameraComponent/>
+        <Lista/>
+    </>
   );
 }

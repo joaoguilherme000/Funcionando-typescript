@@ -39,7 +39,6 @@ const Lista = () => {
         horizontal
         renderItem={renderCategoryChips}
         keyExtractor={(item) => item.key}
-        contentContainerStyle={styles.flatListStyle}
       />
     </View>
   );
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginHorizontal: 5,
   },
-  text: {
+  texto: {
     color: '#fff',
     fontWeight: 'bold',
   },
