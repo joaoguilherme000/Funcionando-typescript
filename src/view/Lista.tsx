@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import { View, FlatList, Text, StyleSheet, TouchableOpacity,Modal, Button } from 'react-native';
+import Styles from './Styles';
 
 interface Category {
   key: string;
@@ -21,51 +22,84 @@ const data: Category[] = [
     { key: '12', category: 'Produtos para Animais de Estimação' },
   ];
 
-const Lista = () => {
-  const renderCategoryChips = ({ item }: { item: Category }) => {
-    return (
-    <TouchableOpacity>
-        <View style={styles.chip}>
+  const Lista = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
+    const renderCategoryChips = ({ item }: { item: Category }) => {
+      return (
+        <TouchableOpacity onPress={() => {
+          setSelectedCategory(item.category);
+          setIsModalVisible(true);
+        }}>
+          <View style={styles.chip}>
             <Text style={styles.texto}>{item.category}</Text>
-        </View>
-    </TouchableOpacity>
+          </View>
+        </TouchableOpacity>
+      );
+    };
+  
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={data}
+          horizontal
+          renderItem={renderCategoryChips}
+          keyExtractor={(item) => item.key}
+        />
+  
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isModalVisible}
+          onRequestClose={() => {
+            setIsModalVisible(false);
+          }}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Text style={Styles.texto}>Você escolheu a categoria: {selectedCategory}</Text>
+              <Button title="Fechar" onPress={() => setIsModalVisible(false)} />
+            </View>
+          </View>
+        </Modal>
+      </View>
     );
   };
-
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={data}
-        horizontal
-        renderItem={renderCategoryChips}
-        keyExtractor={(item) => item.key}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 4,
-    flex: 0.5,
-    backgroundColor: '#ffffff',
-    width: '100%',
-  },
-  chip: {
-    flex: 1,
-    backgroundColor: '#007bff',
-    borderRadius: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    marginHorizontal: 5,
-  },
-  texto: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  flatListStyle: {
-
-  },
-});
-
-export default Lista;
+  
+  const styles = StyleSheet.create({
+    container: {
+      padding: 4,
+      flex: 0.5,
+      backgroundColor: '#ffffff',
+      width: '100%',
+    },
+    chip: {
+      flex: 1,
+      backgroundColor: '#007bff',
+      borderRadius: 20,
+      paddingHorizontal: 15,
+      paddingVertical: 8,
+      marginHorizontal: 5,
+    },
+    texto: {
+      color: '#fff',
+      fontWeight: 'bold',
+    },
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    modalContent: {
+      justifyContent: 'center',
+      backgroundColor: 'white',
+      padding: 20,
+      borderRadius: 10,
+      width: '85%',
+      height: 150,
+      elevation: 5,
+    },
+  });
+  
+  export default Lista;

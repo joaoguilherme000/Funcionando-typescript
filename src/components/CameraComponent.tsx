@@ -35,11 +35,11 @@ export default function CameraComponent() {
                 ref={camRef}
             >
                 <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}>
-                    <TouchableOpacity style={{ position: 'absolute', bottom: 20, left: 20, backgroundColor: "#000", padding: 15, borderRadius: 99,}}
+                    <TouchableOpacity style={{ position: 'absolute', bottom: 20, left: 20, backgroundColor: "#f4a100", padding: 15, borderRadius: 99,}}
                         onPress={() => {
                             navigation.navigate('Resultados'); // Navega para a tela "Resultados"
                         }}>
-                        <FontAwesome name="info" size={23} color='#FFF' />
+                        <FontAwesome name="info" size={23} color='#000' />
                     </TouchableOpacity>
                 </View>
             </Camera>
