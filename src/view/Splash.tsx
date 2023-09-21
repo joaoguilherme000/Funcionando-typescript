@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import Home from './Home';
+import TelaCamera from './TelaCamera';
 
 const Splash = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -45,7 +45,7 @@ const Splash = () => {
 
   // Quando a aplicação estiver pronta, exibe o conteúdo
   return (
-    <Home/>
+    <TelaCamera/>
   );
 };
 

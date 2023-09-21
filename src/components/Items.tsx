@@ -72,7 +72,7 @@ export default function Items () {
             return (
             <View style={itemStyle}>
                 <ImageProduto />
-                <View style={Styles.informacao}>
+                <View style={Styles.informaçao}>
                     <Text style={Styles.texto}>PRODUTO: {item.nome}</Text>
                     <Text style={Styles.texto}>PREÇO: R$ {item.preço}</Text>
                 </View>

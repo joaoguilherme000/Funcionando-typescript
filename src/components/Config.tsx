@@ -1,4 +1,3 @@
-import * as react from "react";
 import { View,Text, TouchableOpacity } from "react-native";
 import Styles from "../view/Styles";
 

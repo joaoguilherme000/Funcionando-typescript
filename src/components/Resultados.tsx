@@ -1,15 +1,15 @@
 import React from "react"
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import Items from "./Items";
 import Config from "./Config";
 
-export default function Resultados({ navigation }) {
+export default function Resultados() {
 
   return (
-    <View style={{ flex: 1, padding: 0 }}>
+    <SafeAreaView style={{ flex: 1, paddingTop: 29 }}>
       {/* O botão de ordenar abaixo se chama config e os items sao os que aparecem na tela com foto e tudo mais*/}
       <Config/>
       <Items/>
-    </View>
+    </SafeAreaView>
   );
 }
