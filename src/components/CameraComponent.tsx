@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, TouchableOpacity, Modal, Image } from 'react-native';
-import { FontAwesome } from "@expo/vector-icons";
+import { StyleSheet, View, Text, SafeAreaView,} from 'react-native';
 import { CameraType, Camera } from 'expo-camera';
 import Styles from "../view/Styles";
-import Resultados from './Resultados';
-import { useNavigation } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function CameraComponent() {
-    const navigation = useNavigation();
+    const insets = useSafeAreaInsets();
 
     const camRef = useRef<Camera>(null);
     const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
@@ -30,18 +28,11 @@ export default function CameraComponent() {
     return (
         <SafeAreaView style={styles.container}>
             <Camera
-                style={{ flex: 1, width: '100%' }}
+                style={{ width: '100%', marginTop: insets.top, height: "89%",  }}
                 type={type}
                 ref={camRef}
             >
-                <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}>
-                    <TouchableOpacity style={{ position: 'absolute', bottom: 20, left: 20, backgroundColor: "#f4a100", padding: 15, borderRadius: 99,}}
-                        onPress={() => {
-                            navigation.navigate('Resultados'); // Navega para a tela "Resultados"
-                        }}>
-                        <FontAwesome name="info" size={23} color='#000' />
-                    </TouchableOpacity>
-                </View>
+                <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
             </Camera>
         </SafeAreaView>
     );

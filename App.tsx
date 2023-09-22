@@ -17,8 +17,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="CameraComponent"
-          component={CameraComponent}
+          name="TelaCamera"
+          component={TelaCamera}
           options={{ headerShown: false }}
         />
         <Stack.Screen

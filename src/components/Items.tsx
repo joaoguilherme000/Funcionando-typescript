@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, FlatList, Image, View } from "react-native";
+import { Text, FlatList, View } from "react-native";
 import Styles from "../view/Styles";
 import ImageProduto from "../view/ImageProduto";
 
@@ -8,7 +8,7 @@ export default function Items () {
         id: string;
         nome: string;
         preço: number;
-        }
+    }
 
     const [data, setData] = useState<Produto[]>([
         { id: "1", nome: "Coca Cola", preço: 25 },
