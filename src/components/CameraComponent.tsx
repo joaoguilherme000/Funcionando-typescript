@@ -18,6 +18,22 @@ export default function CameraComponent() {
         })();
     }, []);
 
+    useEffect(() => {
+        return () => {
+          if (camRef.current) {
+            camRef.current.pausePreview(); // Pausar a visualização da câmera
+          }
+        };
+      }, []);
+    
+      useEffect(() => {
+        if (hasPermission) {
+          if (camRef.current) {
+            camRef.current.resumePreview(); // Retomar a visualização da câmera
+          }
+        }
+      }, [hasPermission]);
+
     if (hasPermission === null) {
         return <View />;
     }

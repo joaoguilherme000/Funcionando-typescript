@@ -11,12 +11,12 @@ export default function TelaCamera() {
   return (
     <>
         <CameraComponent/>
-        <TouchableOpacity style={{ position: 'absolute', bottom: 140, left: 20, padding: 11}}
-                        onPress={() => {
-                            navigation.navigate('Resultados'); // Navega para a tela "Resultados"
-                        }}>
-                        <FontAwesome name="info" size={25} color='#000' />
-                    </TouchableOpacity>
+        <TouchableOpacity style={{ position: 'absolute', bottom: "13%", left: 20, padding: 11}}
+          onPress={() => {
+              navigation.navigate('Resultados'); // Navega para a tela "Resultados"
+          }}>
+          <FontAwesome name="info" size={25} color='#000' />
+        </TouchableOpacity>
         <Lista/>
     </>
   );

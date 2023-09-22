@@ -2,12 +2,10 @@ import React from "react"
 import { SafeAreaView, } from "react-native";
 import Items from "./Items";
 import Config from "./Config";
-import { useRoute } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function Resultados() {
   const insets = useSafeAreaInsets();
-  
 
   return (
     <SafeAreaView style={{ flex: 1, marginTop: insets.top, }}>
