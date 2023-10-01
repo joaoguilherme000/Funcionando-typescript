@@ -36,6 +36,11 @@ export default function Resultados() {
     // Adicione outros
   ]);
 
+  const handleOrdenarPorChange = (novaOrdem) => {
+    // Faça o que for necessário com a nova ordem selecionada, por exemplo, atualize o estado ou a lista de produtos
+    console.log('Ordem selecionada:', novaOrdem);
+  };
+
   const insets = useSafeAreaInsets();
 
   const route = useRoute();
@@ -44,7 +49,7 @@ export default function Resultados() {
 
   return (
     <SafeAreaView style={{ flex: 1, marginTop: insets.top, }}>
-      <Config/>
+      <Config onOrdenarPorChange={handleOrdenarPorChange}/>
       <Image source={{ uri: route.params.uriDaImagem }} style={{ width: 100, height: 100 }} />
       <FlatList
         data={data}
