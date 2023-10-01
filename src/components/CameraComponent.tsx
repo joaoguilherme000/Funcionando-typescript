@@ -1,16 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, Text, SafeAreaView,TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView,TouchableOpacity,Button, Image} from 'react-native';
 import { CameraType, Camera } from 'expo-camera';
 import Styles from "../view/Styles";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function CameraComponent() {
+    const camRef = useRef<Camera>(null);
     
     const insets = useSafeAreaInsets();
 
-    const camRef = useRef<Camera>(null);
     const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
     const [hasPermission, setHasPermission] = useState<boolean | null>(null);
+
+    const [uriDaImagem, setUriDaImagem] = useState<string | null>(null); // Novo estado para a URI da imagem
 
     useEffect(() => {
         (async () => {
@@ -18,6 +20,13 @@ export default function CameraComponent() {
             setHasPermission(status === 'granted');
         })();
     }, []);
+
+    const tirarFoto = async () => {
+        if (camRef.current) {
+          const photo = await camRef.current.takePictureAsync();
+          setUriDaImagem(photo.uri);
+        }
+      };
 
     if (hasPermission === null) {
         return <View />;
@@ -35,6 +44,10 @@ export default function CameraComponent() {
             >
                 <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
             </Camera>
+            <TouchableOpacity onPress={tirarFoto}>
+                <Text>Tirar Foto</Text>
+            </TouchableOpacity>
+            {uriDaImagem && <Image source={{ uri: uriDaImagem }} style={styles.imagem} />} 
         </SafeAreaView>
     );
 }
@@ -44,5 +57,9 @@ const styles = StyleSheet.create({
         flex: 10,
         backgroundColor: '#ffffff',
         alignItems: 'center',
+    },
+    imagem: {
+        width: 200, // Defina o tamanho desejado para a imagem
+        height: 200, // Defina o tamanho desejado para a imagem
     },
 });

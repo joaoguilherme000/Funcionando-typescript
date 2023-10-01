@@ -1,4 +1,4 @@
-import Lista from '../view/Lista';
+import Lista from '../components/Lista';
 import CameraComponent from "../components/CameraComponent";
 import { useNavigation } from '@react-navigation/native';
 

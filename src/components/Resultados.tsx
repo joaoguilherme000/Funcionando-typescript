@@ -1,6 +1,7 @@
-import { SafeAreaView,Text, FlatList, View } from "react-native";
+import { SafeAreaView,Text, FlatList, View,Image } from "react-native";
 import Items from "./Items";
 import Config from "./Config";
+import ItemUser from "./ItemUser";
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
@@ -38,26 +39,28 @@ export default function Resultados() {
   const insets = useSafeAreaInsets();
 
   const route = useRoute();
-  const selectedCategory = route.params?.selectedCategory; // Receba o parâmetro
+  const selectedCategory = route.params?.selectedCategory;
+  const uriDaImagem = route.params?.uriDaImagem;
 
   return (
     <SafeAreaView style={{ flex: 1, marginTop: insets.top, }}>
       <Config/>
+      <Image source={{ uri: route.params.uriDaImagem }} style={{ width: 100, height: 100 }} />
       <FlatList
-            data={data}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item, index }) => {
-                return (
-                    <View style={Styles.horizontal}>
-                        <ImageProduto />
-                        <View style={Styles.informacao}>
-                            <Text style={Styles.texto}>PRODUTO: {selectedCategory}</Text>
-                            <Text style={Styles.texto}>PREÇO: R$ {item.preço}</Text>
-                        </View>
-                    </View>
-                );
-            }}
-        />
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item, index }) => {
+          return (
+          <View style={Styles.horizontal}>
+              <ImageProduto/>
+              <View style={Styles.informacao}>
+                  <Text style={Styles.texto}>PRODUTO: {selectedCategory}</Text>
+                  <Text style={Styles.texto}>PREÇO: R$ {item.preço}</Text>
+              </View>
+          </View>
+          );
+        }}
+      />
     </SafeAreaView>
   );
 }   

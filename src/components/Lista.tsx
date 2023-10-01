@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import { View, FlatList, Text, StyleSheet, TouchableOpacity,Modal, Button } from 'react-native';
-import Styles from './Styles';
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
+
 
 interface Category {
   key: string;
   category: string;
 }
+
+import Styles from '../view/Styles';
+import CameraComponent,{ tirarFoto } from './CameraComponent';
 
 const data: Category[] = [
     { key: '1', category: 'Comida' },
@@ -27,15 +30,18 @@ const data: Category[] = [
   const Lista = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [uriDaImagem, setUriDaImagem] = useState<string | null>(null); // Estado para armazenar a URI da imagem
 
     const navigation = useNavigation();
   
     const renderCategoryChips = ({ item }: { item: Category }) => {
       return (
-        <TouchableOpacity onPress={() => {
-          setSelectedCategory(item.category);
-          setIsModalVisible(true);
-        }}>
+        <TouchableOpacity
+          onPress={async () => {
+            setSelectedCategory(item.category);
+            setIsModalVisible(true);
+          }}
+        >
           <View style={styles.chip}>
             <Text style={styles.texto}>{item.category}</Text>
           </View>
@@ -47,7 +53,7 @@ const data: Category[] = [
       <View style={styles.container}>
         <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11}}
             onPress={() => {
-                navigation.navigate('Resultados', {selectedCategory}); // Navega para a tela "Resultados"
+              navigation.navigate('Resultados', {selectedCategory, uriDaImagem});
             }}>
             <FontAwesome name="info" size={25} color='#000' />
         </TouchableOpacity>
@@ -79,7 +85,7 @@ const data: Category[] = [
   
   const styles = StyleSheet.create({
     container: {
-      padding: 4,
+      padding: 1,
       flex: 0.5,
       backgroundColor: '#ffffff',
       width: '100%',
