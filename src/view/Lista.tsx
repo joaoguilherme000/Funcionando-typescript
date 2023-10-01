@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { View, FlatList, Text, StyleSheet, TouchableOpacity,Modal, Button } from 'react-native';
 import Styles from './Styles';
+import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
 
 interface Category {
   key: string;
@@ -25,6 +27,8 @@ const data: Category[] = [
   const Lista = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    const navigation = useNavigation();
   
     const renderCategoryChips = ({ item }: { item: Category }) => {
       return (
@@ -41,6 +45,12 @@ const data: Category[] = [
   
     return (
       <View style={styles.container}>
+        <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11}}
+            onPress={() => {
+                navigation.navigate('Resultados', {selectedCategory}); // Navega para a tela "Resultados"
+            }}>
+            <FontAwesome name="info" size={25} color='#000' />
+        </TouchableOpacity>
         <FlatList
           data={data}
           horizontal

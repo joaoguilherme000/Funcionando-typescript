@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    height: 500,
-    width: 500, // ajuste o tamanho
+    height: 400,
+    width: 400, // ajuste o tamanho
   },
 });
 

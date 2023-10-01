@@ -12,9 +12,7 @@ export default function ImageProduto() {
   };
 
   return (
-    <TouchableOpacity onPress={handleImagePress}>
       <Image source={foto} style={{ width: '25%', height: 100, resizeMode: 'center' }} />
-    </TouchableOpacity>
   );
 }
 
