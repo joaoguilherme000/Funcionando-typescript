@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text,} from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import Styles from '../view/Styles';
 
-export default function Config({ onOrdenarPorChange }) {
-  const [ordenarPor, setOrdenarPor] = useState('Mais Barato');
-  const opcoesOrdenarPor = ['Mais Barato', 'Mais Caro', 'Nome'];
+interface ConfigProps {
+  onOrdenarPorChange: (value: string) => void;
+}
 
-  const handleOrdenarPorChange = (index, value) => {
+export default function Config({ onOrdenarPorChange }: ConfigProps ) {
+  const [ordenarPor, setOrdenarPor] = useState<string>('Mais Barato');
+  const opcoesOrdenarPor: string[] = ['Mais Barato', 'Mais Caro', 'Z - A', 'A - Z'];
+
+  const handleOrdenarPorChange = (index: number, value: string) => {
     setOrdenarPor(value);
     onOrdenarPorChange(value); // Chame a função fornecida com a opção selecionada
   };
@@ -16,7 +20,7 @@ export default function Config({ onOrdenarPorChange }) {
     <View style={{ margin: 5, flexDirection: 'row' }}>
       <ModalDropdown
         options={opcoesOrdenarPor}
-        defaultValue="Ordenar Por"
+        defaultValue='Ordenar Por'
         onSelect={handleOrdenarPorChange}
         style={Styles.buttonConfig}
         textStyle={Styles.config}

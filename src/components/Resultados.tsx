@@ -1,11 +1,9 @@
 import { SafeAreaView,Text, FlatList, View,Image } from "react-native";
-import Items from "./Items";
 import Config from "./Config";
-import ItemUser from "./ItemUser";
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 import Styles from "../view/Styles";
 import ImageProduto from "../view/ImageProduto";
@@ -36,7 +34,7 @@ export default function Resultados() {
     // Adicione outros
   ]);
 
-  const handleOrdenarPorChange = (novaOrdem) => {
+  const handleOrdenarPorChange = (novaOrdem: string) => {
     // Faça o que for necessário com a nova ordem selecionada, por exemplo, atualize o estado ou a lista de produtos
     console.log('Ordem selecionada:', novaOrdem);
   };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import foto from '../assets/coca.jpg';
 
@@ -18,7 +18,7 @@ export default function ImageProduto() {
 
 export function TelaImagem() {
   const route = useRoute();
-  const imagemUrl = route.params?.imagemUrl || ''; // Obtenha a URL da imagem passada como parâmetro
+  const imagemUrl = route.params?.imagemUrl || ''; // a URL da imagem passada como parâmetro
 
   return (
     <View style={styles.container}>

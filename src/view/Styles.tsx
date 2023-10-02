@@ -35,7 +35,7 @@ const Styles = StyleSheet.create({
     padding: 7,
     flex: 2,
   },
-  informaçao: {
+  informacao: {
     paddingTop: 15,
   },
   image: {

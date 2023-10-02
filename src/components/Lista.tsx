@@ -10,7 +10,6 @@ interface Category {
 }
 
 import Styles from '../view/Styles';
-import CameraComponent,{ tirarFoto } from './CameraComponent';
 
 const data: Category[] = [
     { key: '1', category: 'Comida' },

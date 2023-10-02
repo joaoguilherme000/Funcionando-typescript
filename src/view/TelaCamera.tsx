@@ -8,8 +8,8 @@ export default function TelaCamera() {
 
   return (
     <>
-        <CameraComponent/>
-        <Lista/>
+      <CameraComponent/>
+      <Lista/>
     </>
   );
 }

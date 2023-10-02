@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import TelaCamera from './TelaCamera';
+import { StatusBar } from 'expo-status-bar';
 
 const Splash = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -35,6 +36,7 @@ const Splash = () => {
     // Exibe a imagem da splash screen enquanto a aplicação está carregando
     return (
       <View style={styles.container}>
+        <StatusBar style="dark" backgroundColor="#252525"/> 
         <Image
           source={require('../assets/logo.jpg')} // Substitua pelo caminho correto para a sua imagem ou animação
           style={styles.image}
