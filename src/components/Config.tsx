@@ -8,7 +8,7 @@ interface ConfigProps {
 }
 
 export default function Config({ onOrdenarPorChange }: ConfigProps ) {
-  const [ordenarPor, setOrdenarPor] = useState<string>('Mais Barato');
+  const [ordenarPor, setOrdenarPor] = useState<string>('');
   const opcoesOrdenarPor: string[] = ['Mais Barato', 'Mais Caro', 'Z - A', 'A - Z'];
 
   const handleOrdenarPorChange = (index: number, value: string) => {
