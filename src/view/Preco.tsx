@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import Styles from "./Styles";
 
@@ -13,7 +13,7 @@ export default function Preco () {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.label}>Digite o nome da Categoria</Text>
+        <Text style={styles.label}>Digite o Preço</Text>
             <TextInput
               style={Styles.texto}
               onChangeText={handleInputChange}

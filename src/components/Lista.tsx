@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { View, FlatList, Text, StyleSheet, TouchableOpacity,Modal, Button } from 'react-native';
+import { View, FlatList, Text, StyleSheet, TouchableOpacity,Modal, Button, TextInput} from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
+
 
 
 interface Category {
@@ -30,9 +31,14 @@ const data: Category[] = [
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [uriDaImagem, setUriDaImagem] = useState<string | null>(null); // Estado para armazenar a URI da imagem
+    const [texto, setTexto] = useState<string>("");
 
     const navigation = useNavigation();
-  
+
+    const handleInputChange = (text: string) => {
+      setTexto(text);
+    };
+
     const renderCategoryChips = ({ item }: { item: Category }) => {
       return (
         <TouchableOpacity
@@ -74,6 +80,8 @@ const data: Category[] = [
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <Text style={Styles.texto}>Você escolheu a categoria: {selectedCategory}</Text>
+              <Text style={Styles.texto}>Agora coloque o preço:</Text>
+              <TextInput style={Styles.texto} onChangeText={handleInputChange} value={texto} />
               <Button title="Fechar" onPress={() => setIsModalVisible(false)} />
             </View>
           </View>
@@ -112,7 +120,7 @@ const data: Category[] = [
       padding: 20,
       borderRadius: 10,
       width: '85%',
-      height: 150,
+      height: 210,
       elevation: 5,
     },
   });

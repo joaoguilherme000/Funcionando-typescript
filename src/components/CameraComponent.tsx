@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, Text, SafeAreaView,TouchableOpacity,Button, Image} from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView,TouchableOpacity, Image} from 'react-native';
 import { CameraType, Camera } from 'expo-camera';
 import Styles from "../view/Styles";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
