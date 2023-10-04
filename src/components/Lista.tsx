@@ -10,8 +10,6 @@ interface Category {
   category: string;
 }
 
-import Styles from '../view/Styles';
-
 const data: Category[] = [
     { key: '1', category: 'Comida' },
     { key: '2', category: 'Bebida' },
@@ -35,8 +33,12 @@ const data: Category[] = [
 
     const navigation = useNavigation();
 
-    const handleInputChange = (text: string) => {
-      setTexto(text);
+    const handleInputChange = (inputText: string) => {
+      // Verifique se o texto inserido segue o formato desejado (9999.99)
+      const regex = /^\d+(\,\d{0,2})?$/;
+      if (regex.test(inputText) || inputText === '') {
+        setTexto(inputText);
+      }
     };
 
     const renderCategoryChips = ({ item }: { item: Category }) => {
@@ -79,9 +81,11 @@ const data: Category[] = [
         >
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
-              <Text style={Styles.texto}>Você escolheu a categoria: {selectedCategory}</Text>
-              <Text style={Styles.texto}>Agora coloque o preço:</Text>
-              <TextInput style={Styles.texto} onChangeText={handleInputChange} value={texto} />
+              <Text style={styles.mensagem}>Você escolheu a categoria: {selectedCategory}</Text>
+              <View style={{flex: 1, flexDirection: 'row', gap: 5}}>
+                <Text style={styles.moeda}>R$</Text>
+                <TextInput style={styles.preco} onChangeText={handleInputChange} value={texto} keyboardType='numeric' placeholder='Agora ipreço...'/>
+              </View>
               <Button title="Fechar" onPress={() => setIsModalVisible(false)} />
             </View>
           </View>
@@ -105,9 +109,17 @@ const data: Category[] = [
       paddingVertical: 8,
       marginHorizontal: 5,
     },
-    texto: {
-      color: '#fff',
-      fontWeight: 'bold',
+    mensagem: {
+      fontSize: 17,
+      paddingBottom: '6%',
+    },
+    preco: {
+      fontSize: 17,
+      paddingBottom: '6%',
+    },
+    moeda: {
+      fontSize: 17,
+      marginTop: 6,
     },
     modalContainer: {
       flex: 1,
