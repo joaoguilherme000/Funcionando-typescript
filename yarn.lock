@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@0no-co/graphql.web@^1.0.1":
-  "integrity" "sha512-W3ezhHGfO0MS1PtGloaTpg0PbaT8aZSmmaerL7idtU5F7oCI+uu25k+MsMS31BVFlp4aMkHSrNRxiD72IlK8TA=="
-  "resolved" "https://registry.npmjs.org/@0no-co/graphql.web/-/graphql.web-1.0.4.tgz"
-  "version" "1.0.4"
-
 "@ampproject/remapping@^2.2.0":
   "integrity" "sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg=="
   "resolved" "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.1.tgz"
@@ -1187,10 +1182,10 @@
     "mv" "~2"
     "safe-json-stringify" "~1"
 
-"@expo/cli@0.10.11":
-  "integrity" "sha512-ehaAOw4SwkJ9uL5z9c3RD4LJpmMDCXZBCWZG4fonUGutks4t/GLoNRcdENkWsf6NSgkdPNgNl8KwphU1p083PQ=="
-  "resolved" "https://registry.npmjs.org/@expo/cli/-/cli-0.10.11.tgz"
-  "version" "0.10.11"
+"@expo/cli@0.10.13":
+  "integrity" "sha512-8ciyz+yIDih6zCNMWK0IyEv411W7vej/TaWIFGarogPVbFokXrUKr0aKoQG1RU1SLlY4eUpHakbIzqog+rhJdQ=="
+  "resolved" "https://registry.npmjs.org/@expo/cli/-/cli-0.10.13.tgz"
+  "version" "0.10.13"
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
@@ -1202,7 +1197,7 @@
     "@expo/json-file" "^8.2.37"
     "@expo/metro-config" "~0.10.0"
     "@expo/osascript" "^2.0.31"
-    "@expo/package-manager" "~1.0.0"
+    "@expo/package-manager" "~1.1.0"
     "@expo/plist" "^0.0.20"
     "@expo/prebuild-config" "6.2.6"
     "@expo/rudder-sdk-node" "1.1.1"
@@ -1227,7 +1222,6 @@
     "graphql-tag" "^2.10.1"
     "https-proxy-agent" "^5.0.1"
     "internal-ip" "4.3.0"
-    "is-root" "^2.1.0"
     "js-yaml" "^3.13.1"
     "json-schema-deref-sync" "^0.13.0"
     "md5-file" "^3.2.3"
@@ -1410,10 +1404,10 @@
     "@expo/spawn-async" "^1.5.0"
     "exec-async" "^2.2.0"
 
-"@expo/package-manager@~1.0.0":
-  "integrity" "sha512-dlUp6o8qs1mi3/+l3y7cY3oMoqQVVzvH18cUTi6+t4ob8XwTpaeP2SwOP+obwZN29dMg9YzZAv4eQz+mshAbQA=="
-  "resolved" "https://registry.npmjs.org/@expo/package-manager/-/package-manager-1.0.2.tgz"
-  "version" "1.0.2"
+"@expo/package-manager@~1.1.0":
+  "integrity" "sha512-JI9XzrxB0QVXysyuJ996FPCJGDCYRkbUvgG4QmMTTMFA1T+mv8YzazC3T9C1pHQUAAveVCre1+Pqv0nZXN24Xg=="
+  "resolved" "https://registry.npmjs.org/@expo/package-manager/-/package-manager-1.1.2.tgz"
+  "version" "1.1.2"
   dependencies:
     "@expo/json-file" "^8.2.37"
     "@expo/spawn-async" "^1.5.0"
@@ -1470,14 +1464,7 @@
   "resolved" "https://registry.npmjs.org/@expo/sdk-runtime-versions/-/sdk-runtime-versions-1.0.0.tgz"
   "version" "1.0.0"
 
-"@expo/spawn-async@^1.5.0":
-  "integrity" "sha512-QdWi16+CHB9JYP7gma19OVVg0BFkvU8zNj9GjWorYI8Iv8FUxjOCcYRuAmX4s/h91e4e7BPsskc8cSrZYho9Ew=="
-  "resolved" "https://registry.npmjs.org/@expo/spawn-async/-/spawn-async-1.7.2.tgz"
-  "version" "1.7.2"
-  dependencies:
-    "cross-spawn" "^7.0.3"
-
-"@expo/spawn-async@1.5.0":
+"@expo/spawn-async@^1.5.0", "@expo/spawn-async@1.5.0":
   "integrity" "sha512-LB7jWkqrHo+5fJHNrLAFdimuSXQ2MQ4lA7SQW5bf/HbsXuV2VrT/jN/M8f/KoWt0uJMGN4k/j7Opx4AvOOxSew=="
   "resolved" "https://registry.npmjs.org/@expo/spawn-async/-/spawn-async-1.5.0.tgz"
   "version" "1.5.0"
@@ -2061,15 +2048,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@urql/core@>=2.3.1":
-  "integrity" "sha512-K+JA5dxEjY7Jkt1hV8G2ShkuOscKS/r+8QnXDDxTkyMzZzviYqz5f/zxgSElObT/QSW17xCC1LFl+kwiyX5opg=="
-  "resolved" "https://registry.npmjs.org/@urql/core/-/core-4.1.2.tgz"
-  "version" "4.1.2"
-  dependencies:
-    "@0no-co/graphql.web" "^1.0.1"
-    "wonka" "^6.3.2"
-
-"@urql/core@2.3.6":
+"@urql/core@>=2.3.1", "@urql/core@2.3.6":
   "integrity" "sha512-PUxhtBh7/8167HJK6WqBv6Z0piuiaZHQGYbhwpNL9aIQmLROPEdaUYkY4wh45wPQXcTpnd11l0q3Pw+TI11pdw=="
   "resolved" "https://registry.npmjs.org/@urql/core/-/core-2.3.6.tgz"
   "version" "2.3.6"
@@ -3291,12 +3270,12 @@
   "version" "1.6.0"
 
 "expo@*", "expo@~49.0.8":
-  "integrity" "sha512-x68r9sJ3HP5AedtGFZ5ufEYLWWrbWN9LN/jKavFMe22vRRyTGDMyIhKcoLCikqRDpYHFtIEuLh1P8H85Oz800Q=="
-  "resolved" "https://registry.npmjs.org/expo/-/expo-49.0.9.tgz"
-  "version" "49.0.9"
+  "integrity" "sha512-mIZWb/JRiUQDg+xjgCgECSiLrpBUnqiDaeEktHfXUYTT4Qhh+mY9X0lfy0HjiCKwPVFv2M7SQenCGwCQV5MdpA=="
+  "resolved" "https://registry.npmjs.org/expo/-/expo-49.0.14.tgz"
+  "version" "49.0.14"
   dependencies:
     "@babel/runtime" "^7.20.0"
-    "@expo/cli" "0.10.11"
+    "@expo/cli" "0.10.13"
     "@expo/config" "8.1.2"
     "@expo/config-plugins" "7.2.5"
     "@expo/vector-icons" "^13.0.0"
@@ -3669,7 +3648,7 @@
   dependencies:
     "tslib" "^2.1.0"
 
-"graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@15.8.0":
+"graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@15.8.0":
   "integrity" "sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw=="
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz"
   "version" "15.8.0"
@@ -3952,11 +3931,6 @@
   "version" "2.0.4"
   dependencies:
     "isobject" "^3.0.1"
-
-"is-root@^2.1.0":
-  "integrity" "sha512-AGOriNp96vNBd3HtU+RzFEc75FfR5ymiYv8E553I71SCeXBiMsVDUtdio1OEFvrPyLIQ9tVR5RxXIFe5PUFjMg=="
-  "resolved" "https://registry.npmjs.org/is-root/-/is-root-2.1.0.tgz"
-  "version" "2.1.0"
 
 "is-stream@^1.1.0":
   "integrity" "sha512-uQPm8kcs47jx38atAcWTVxyltQYoPT68y9aWYdV6yWXSyW8mzSat0TL6CiWdZeCdF3KrAvpVtnHbTv4RN+rqdQ=="
@@ -4763,10 +4737,10 @@
   dependencies:
     "minipass" "^3.0.0"
 
-"minipass@^3.0.0", "minipass@^3.1.1":
-  "integrity" "sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw=="
-  "resolved" "https://registry.npmjs.org/minipass/-/minipass-3.3.6.tgz"
-  "version" "3.3.6"
+"minipass@^3.0.0", "minipass@^3.1.1", "minipass@3.1.6":
+  "integrity" "sha512-rty5kpw9/z8SX9dmxblFA6edItUmwJgMeYDZRrwlIVN27i8gysGbznJwUggw2V/FVqFSDdWy040ZPS811DYAqQ=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-3.1.6.tgz"
+  "version" "3.1.6"
   dependencies:
     "yallist" "^4.0.0"
 
@@ -4774,13 +4748,6 @@
   "integrity" "sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ=="
   "resolved" "https://registry.npmjs.org/minipass/-/minipass-5.0.0.tgz"
   "version" "5.0.0"
-
-"minipass@3.1.6":
-  "integrity" "sha512-rty5kpw9/z8SX9dmxblFA6edItUmwJgMeYDZRrwlIVN27i8gysGbznJwUggw2V/FVqFSDdWy040ZPS811DYAqQ=="
-  "resolved" "https://registry.npmjs.org/minipass/-/minipass-3.1.6.tgz"
-  "version" "3.1.6"
-  dependencies:
-    "yallist" "^4.0.0"
 
 "minizlib@^2.1.1":
   "integrity" "sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg=="
@@ -5238,9 +5205,9 @@
   "version" "3.4.0"
 
 "postcss@~8.4.21":
-  "integrity" "sha512-cbI+jaqIeu/VGqXEarWkRCCffhjgXc0qjBtXpqJhTBohMUjUQnbBr0xqX3vEKudc4iviTewcJo5ajcec5+wdJw=="
-  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.29.tgz"
-  "version" "8.4.29"
+  "integrity" "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz"
+  "version" "8.4.31"
   dependencies:
     "nanoid" "^3.3.6"
     "picocolors" "^1.0.0"
@@ -6188,9 +6155,9 @@
   "version" "1.0.0"
 
 "tar@^6.0.2", "tar@^6.0.5":
-  "integrity" "sha512-/zKt9UyngnxIT/EAGYuxaMYgOIJiP81ab9ZfkILq4oNLPFX50qyYmu7jRj9qeXoxmJHjGlbH0+cm2uy1WCs10A=="
-  "resolved" "https://registry.npmjs.org/tar/-/tar-6.1.15.tgz"
-  "version" "6.1.15"
+  "integrity" "sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ=="
+  "resolved" "https://registry.npmjs.org/tar/-/tar-6.2.0.tgz"
+  "version" "6.2.0"
   dependencies:
     "chownr" "^2.0.0"
     "fs-minipass" "^2.0.0"
@@ -6611,11 +6578,6 @@
   "resolved" "https://registry.npmjs.org/wonka/-/wonka-4.0.15.tgz"
   "version" "4.0.15"
 
-"wonka@^6.3.2":
-  "integrity" "sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg=="
-  "resolved" "https://registry.npmjs.org/wonka/-/wonka-6.3.4.tgz"
-  "version" "6.3.4"
-
 "wrap-ansi@^6.2.0":
   "integrity" "sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA=="
   "resolved" "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
@@ -6661,9 +6623,9 @@
   "version" "7.5.9"
 
 "ws@^8.12.1":
-  "integrity" "sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-8.13.0.tgz"
-  "version" "8.13.0"
+  "integrity" "sha512-wEBG1ftX4jcglPxgFCMJmZ2PLtSbJ2Peg6TmpJFTbe9GZYOQCDPdMYu/Tm0/bGZkw8paZnJY45J4K2PZrLYq8g=="
+  "resolved" "https://registry.npmjs.org/ws/-/ws-8.14.2.tgz"
+  "version" "8.14.2"
 
 "xcode@^3.0.1":
   "integrity" "sha512-kCz5k7J7XbJtjABOvkc5lJmkiDh8VhjVCGNiqdKCscmVpdVUpEAyXv1xmCLkQJ5dsHqx3IPO4XW+NTDhU/fatA=="

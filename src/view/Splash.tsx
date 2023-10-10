@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import TelaCamera from './TelaCamera';
 import { StatusBar } from 'expo-status-bar';
+import Home from './Home';
+import Outro from './Outro';
 
 const Splash = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -16,7 +17,7 @@ const Splash = () => {
         // Marca o aplicativo como pronto após um atraso de 3 segundos (ajuste conforme necessário)
         setTimeout(() => {
           setAppIsReady(true);
-        }, 3000);
+        }, 100);
       } catch (error) {
         console.error(error);
       }
@@ -47,7 +48,7 @@ const Splash = () => {
 
   // Quando a aplicação estiver pronta, exibe o conteúdo
   return (
-    <TelaCamera/>
+    <Outro/>
   );
 };
 
