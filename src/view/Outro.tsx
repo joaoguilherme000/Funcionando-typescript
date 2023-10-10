@@ -53,14 +53,13 @@ export default function Outro() {
                 animationType='slide'
                 transparent={false}
                 visible={open}
-                style={styles.modal}
             >
                 {uriDaImagem && <Image
                     source={{ uri: uriDaImagem }}
                     style={styles.imagem}
                 />}
                 <TouchableOpacity onPress={() => setOpen(false)}>
-                    <Text>Fechar</Text>
+                    <Text >Fechar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text>Salvar na galeria</Text>
@@ -77,11 +76,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     imagem: {
-        width: 200,
-        height: 200,
-    },
-    modal: {
         alignItems: 'center',
+        justifyContent:'center',
+        flex: 1,
+    },
+    texto: {
+        alignSelf: 'center',
         justifyContent:'center',
         flex: 1,
     }
