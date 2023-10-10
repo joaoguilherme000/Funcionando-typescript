@@ -48,7 +48,7 @@ export default function Outro() {
             <TouchableOpacity onPress={tirarFoto}>
                 <Text>Tirar Foto</Text>
             </TouchableOpacity>
-            {uriDaImagem && <Image source={{ uri: uriDaImagem }} style={styles.imagem} />} 
+            {uriDaImagem && <Image source={{ uri: uriDaImagem }} style={styles.imagem} />}
         </SafeAreaView>
     );
 }

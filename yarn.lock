@@ -3244,6 +3244,11 @@
   "resolved" "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-12.3.0.tgz"
   "version" "12.3.0"
 
+"expo-media-library@^15.6.0":
+  "integrity" "sha512-SsV+sdPcV9nSmvlCqTfF9rt/3KoWutKvAxk1EFke2BEklcdn9FhupdOFvodW6m3wYkBNdhJaqTRniZHvjYNs8A=="
+  "resolved" "https://registry.npmjs.org/expo-media-library/-/expo-media-library-15.6.0.tgz"
+  "version" "15.6.0"
+
 "expo-modules-autolinking@>=0.8.1", "expo-modules-autolinking@1.5.1":
   "integrity" "sha512-yt5a1VCp2BF9CrsO689PCD5oXKP14MMhnOanQMvDn4BDpURYfzAlDVGC5fZrNQKtwn/eq3bcrxIwZ7D9QjVVRg=="
   "resolved" "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-1.5.1.tgz"
@@ -3263,6 +3268,11 @@
   dependencies:
     "compare-versions" "^3.4.0"
     "invariant" "^2.2.4"
+
+"expo-permissions@^14.4.0":
+  "integrity" "sha512-oAcnJ7dlZhpBydK73cwomA2xofizayVUz+FW5REl7dMu7MYyeN/3aqhlpZ3mYddrxvG161bqu97MQr01UixUnw=="
+  "resolved" "https://registry.npmjs.org/expo-permissions/-/expo-permissions-14.4.0.tgz"
+  "version" "14.4.0"
 
 "expo-status-bar@~1.6.0":
   "integrity" "sha512-e//Oi2WPdomMlMDD3skE4+1ZarKCJ/suvcB4Jo/nO427niKug5oppcPNYO+csR6y3ZglGuypS+3pp/hJ+Xp6fQ=="
