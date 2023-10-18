@@ -92,16 +92,22 @@ export default function CameraComponent() {
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <Text style={styles.mensagem}>Digite o Preço e a categoria do produto</Text>
-              <View style={{flex: 0.5, flexDirection: 'row', gap: 5,}}>
+              <View style={{flex: 0.5, flexDirection: 'row', gap: 5, marginBottom: "1%"}}>
                 <Text style={styles.moeda}>R$</Text>
                 <TextInput
                     style={styles.preco}
                     onChangeText={precoMuda}
                     value={preco}
                     keyboardType="numeric"
-                    placeholder="Agora preço..."
+                    placeholder="Agora ipreço..."
                 />
               </View>
+              <TextInput
+                    style={styles.categoria}
+                    onChangeText={precoMuda}
+                    value={preco}
+                    placeholder="Categoria..."
+                />
               <Button title="Fechar" onPress={fecharModalENavegar} />
             </View>
           </View>
@@ -136,14 +142,17 @@ const styles = StyleSheet.create({
       preco: {
         fontSize: 17,
         alignSelf: 'center',
-        borderWidth: 1,
-        borderColor: "red",
+        width: "85%",
       },
       moeda: {
         fontSize: 17,
         alignSelf: 'center',
-        borderWidth: 1,
-        borderColor: "red",
+        marginLeft: "2%"
+      },
+      categoria: {
+        fontSize: 17,
+        alignSelf: 'center',
+        width: "96%",
       },
       modalContainer: {
         flex: 1,
