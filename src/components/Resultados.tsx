@@ -42,7 +42,7 @@ export default function Resultados() {
   const insets = useSafeAreaInsets();
 
   const route = useRoute();
-  const selectedCategory = route.params?.selectedCategory;
+  const setCategoria = route.params?.Categoria;
   const uriDaImagem = route.params?.uriDaImagem;
 
   return (
@@ -52,12 +52,12 @@ export default function Resultados() {
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => {
+        renderItem={({ item }) => {
           return (
           <View style={Styles.horizontal}>
               <ImageProduto/>
               <View style={Styles.informacao}>
-                  <Text style={Styles.texto}>PRODUTO: {selectedCategory}</Text>
+                  <Text style={Styles.texto}>PRODUTO: {setCategoria}</Text>
                   <Text style={Styles.texto}>PREÇO: R$ {item.preço}</Text>
               </View>
           </View>

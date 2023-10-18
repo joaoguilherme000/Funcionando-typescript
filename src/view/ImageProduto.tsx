@@ -1,15 +1,9 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import foto from '../assets/coca.jpg';
 
 export default function ImageProduto() {
-  const navigation = useNavigation();
-
-  const handleImagePress = () => {
-    // Navegar para a tela TelaImagem e passar a URL da imagem como parâmetro
-    navigation.navigate('TelaImagem', { foto });
-  };
 
   return (
       <Image source={foto} style={{ width: '25%', height: 100, resizeMode: 'center' }} />

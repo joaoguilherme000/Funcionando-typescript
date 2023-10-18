@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import Home from './Home';
-import Outro from './Outro';
+import Home from './TelaCamera';
 
 const Splash = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -48,7 +47,7 @@ const Splash = () => {
 
   // Quando a aplicação estiver pronta, exibe o conteúdo
   return (
-    <Outro/>
+    <Home/>
   );
 };
 
