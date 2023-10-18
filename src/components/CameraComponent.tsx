@@ -69,13 +69,13 @@ export default function CameraComponent() {
                 type={type}
                 ref={camRef}
             >
-                <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
+            <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
             </Camera>
             <TouchableOpacity onPress={tirarFoto}>
                 <Text>Tirar Foto</Text>
             </TouchableOpacity>
             {uriDaImagem && <Image source={{ uri: uriDaImagem }} style={styles.imagem} />} 
-            <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11}}
+            <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
                 onPress={() => {
                 setIsModalVisible(true);
                 }}>
