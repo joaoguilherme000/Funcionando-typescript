@@ -70,7 +70,6 @@ export default function CameraComponent() {
             <TouchableOpacity onPress={tirarFoto}>
                 <Text>Tirar Foto</Text>
             </TouchableOpacity>
-            {uriDaImagem && <Image source={{ uri: uriDaImagem }} style={styles.imagem} />} 
             <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
                 onPress={() => {
                 setIsModalVisible(true);
@@ -105,7 +104,7 @@ export default function CameraComponent() {
                     keyboardType="default"
                     placeholder="Categoria..."
                 />
-              <Button title="Fechar" onPress={fecharModalENavegar} />
+              <Button title="Comparar" onPress={fecharModalENavegar} />
             </View>
           </View>
         </Modal>

@@ -2,6 +2,7 @@
 import { StyleSheet } from 'react-native';
 
 const Styles = StyleSheet.create({
+  // container para todos
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -18,6 +19,7 @@ const Styles = StyleSheet.create({
     height: 50,
     width: "95%",
   },
+  // CONFIG PAGE
   buttonConfig: {
     backgroundColor: "#b6b6b6",
     width: '30%',
@@ -35,6 +37,8 @@ const Styles = StyleSheet.create({
     padding: 7,
     flex: 2,
   },
+
+  // RESULT PAGE
   informacao: {
     paddingTop: 15,
   },
@@ -60,16 +64,17 @@ const Styles = StyleSheet.create({
   vermelho: {
     backgroundColor: "#ff7a7a",
   },
+
   // Informações que o usuario vai passar
   userBox: {
     flexDirection: 'row',
   },
   informacaoUser: {
-
+    padding: "5%",
   },
   textoUser:{
-
-  }
+    fontSize: 20,
+  },
 
 });
 
