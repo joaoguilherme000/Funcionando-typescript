@@ -24,7 +24,7 @@ export function TelaImagem() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000', // Cor de fundo preta para tela cheia
+    backgroundColor: '#000', 
     justifyContent: 'center',
     alignItems: 'center',
   },

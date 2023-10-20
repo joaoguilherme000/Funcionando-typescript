@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function CameraComponent() {
     const [categoria, setCategoria] = useState<string>("");
-    const [preco, setPreco] = useState<string>("");
+    const [preco, setPreco] = useState<String>("");
     const [isModalVisible, setIsModalVisible] = useState(false);
     const navigation = useNavigation();
 
@@ -21,20 +21,16 @@ export default function CameraComponent() {
     const [uriDaImagem, setUriDaImagem] = useState<string | null>(null); // Novo estado para a URI da imagem
 
     const precoMuda = (inputText: string) => {
-        // Verifique se o texto inserido segue o formato desejado (9999.99)
-        const regex = /^\d+(\,\d{0,2})?$/;
-        if (regex.test(inputText) || inputText === '') {
-          setCategoria(inputText);
-        }
-      };
+      // Verifique se o texto inserido segue o formato desejado (9999.99)
+      const regex = /^\d+(\,\d{0,2})?$/;
+      if (regex.test(inputText) || inputText === '') {
+        setPreco(inputText);
+      }
+    };
 
-      const categoriaMuda = (inputText: string) => {
-        // Verifique se o texto inserido segue o formato desejado (9999.99)
-        const regex = /^\d+(\,\d{0,2})?$/;
-        if (regex.test(inputText) || inputText === '') {
-          setCategoria(inputText);
-        }
-      };
+    const categoriaMuda = (inputText: string) => {
+        setCategoria(inputText);
+    };
 
     useEffect(() => {
         (async () => {
@@ -45,7 +41,7 @@ export default function CameraComponent() {
 
     const fecharModalENavegar = () => {
         setIsModalVisible(false);
-        navigation.navigate('Resultados', { categoria, uriDaImagem });
+        navigation.navigate('Resultados', { categoria, uriDaImagem, preco});
       };
 
     const tirarFoto = async () => {
@@ -104,8 +100,9 @@ export default function CameraComponent() {
               </View>
               <TextInput
                     style={styles.categoria}
-                    onChangeText={precoMuda}
-                    value={preco}
+                    onChangeText={categoriaMuda}
+                    value={categoria}
+                    keyboardType="default"
                     placeholder="Categoria..."
                 />
               <Button title="Fechar" onPress={fecharModalENavegar} />

@@ -60,6 +60,16 @@ const Styles = StyleSheet.create({
   vermelho: {
     backgroundColor: "#ff7a7a",
   },
+  // Informações que o usuario vai passar
+  userBox: {
+    flexDirection: 'row',
+  },
+  informacaoUser: {
+
+  },
+  textoUser:{
+
+  }
 
 });
 
