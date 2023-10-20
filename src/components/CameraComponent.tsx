@@ -67,8 +67,8 @@ export default function CameraComponent() {
             >
             <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
             </Camera>
-            <TouchableOpacity onPress={tirarFoto}>
-                <Text>Tirar Foto</Text>
+            <TouchableOpacity style={styles.viewButton} onPress={tirarFoto}>
+                <Text style={styles.fotoButton}>Tirar Foto</Text>
             </TouchableOpacity>
             <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
                 onPress={() => {
@@ -167,5 +167,16 @@ const styles = StyleSheet.create({
       },
       texto: {
         fontSize: 16,
+      },
+      viewButton: {
+        width: "90%",
+        display:'flex',
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: 'center',
+      },
+      fotoButton: {
+        backgroundColor: "red",
+        alignSelf: 'center',
       }
 });
