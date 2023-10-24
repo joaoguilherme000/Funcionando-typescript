@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Resultados from "./src/components/Resultados";
-import TelaCamera from "./src/view/TelaCamera";
+import CameraComponent from "./src/components/CameraComponent";
 
 
 
@@ -19,8 +19,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="TelaCamera"
-          component={TelaCamera}
+          name="CameraComponent"
+          component={CameraComponent}
           options={{ headerShown: false }}
         />
         <Stack.Screen

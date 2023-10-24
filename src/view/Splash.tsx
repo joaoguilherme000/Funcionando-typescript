@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import Home from './TelaCamera';
+import CameraComponent from '../components/CameraComponent';
 
 const Splash = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -47,7 +47,7 @@ const Splash = () => {
 
   // Quando a aplicação estiver pronta, exibe o conteúdo
   return (
-    <Home/>
+    <CameraComponent/>
   );
 };
 

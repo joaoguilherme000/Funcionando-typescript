@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button, StyleSheet, View, Text, SafeAreaView,TouchableOpacity, Image, Modal, TextInput} from 'react-native';
 import { CameraType, Camera } from 'expo-camera';
+
 import Styles from "../view/Styles";
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 
 export default function CameraComponent() {
     const [categoria, setCategoria] = useState<string>("");
-    const [preco, setPreco] = useState<String>("");
+    const [preco, setPreco] = useState<string>("");
     const [isModalVisible, setIsModalVisible] = useState(false);
     const navigation = useNavigation();
 
@@ -39,17 +41,19 @@ export default function CameraComponent() {
         })();
     }, []);
 
-    const fecharModalENavegar = () => {
+    const fecharModalENavegar = async () => {
         setIsModalVisible(false);
         navigation.navigate('Resultados', { categoria, uriDaImagem, preco});
+        setCategoria("");
+        setPreco("");
       };
 
-    const tirarFoto = async () => {
-        if (camRef.current) {
-          const photo = await camRef.current.takePictureAsync();
-          setUriDaImagem(photo.uri);
-        }
-      };
+    const tiraFoto = async () => {
+      if (camRef.current) {
+        const photo = await camRef.current.takePictureAsync();
+        setUriDaImagem(photo.uri);
+      }
+    }
 
     if (hasPermission === null) {
         return <View />;
@@ -59,22 +63,22 @@ export default function CameraComponent() {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Camera
-                style={{ width: '100%', marginTop: insets.top, height: "89%",  }}
-                type={type}
-                ref={camRef}
-            >
-            <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
-            </Camera>
-            <TouchableOpacity style={styles.viewButton} onPress={tirarFoto}>
-                <Text style={styles.fotoButton}>Tirar Foto</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
-                onPress={() => {
-                setIsModalVisible(true);
-                }}>
-            <FontAwesome name="info" size={25} color='#000' />
+        <SafeAreaView style={{flex: 1, flexDirection: 'column',gap: 16}}>
+          <Camera
+              style={{ width: '100%', marginTop: insets.top, height: "89%",  }}
+              type={type}
+              ref={camRef}
+          >
+          <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
+          </Camera>
+        <TouchableOpacity style={Styles.button} onPress={tiraFoto}>
+          <Text style={{fontSize: 20, color:'black'}}>Tirar Foto</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
+            onPress={() => {
+            setIsModalVisible(true);
+            }}>
+          <FontAwesome name="info" size={25} color='#000' />
         </TouchableOpacity>
         <Modal
           animationType="slide"

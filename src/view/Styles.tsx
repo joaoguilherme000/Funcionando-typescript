@@ -9,15 +9,13 @@ const Styles = StyleSheet.create({
     alignItems: "center",
   },
   button: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderWidth: 1,
-    borderColor: '#000',
-    borderRadius: 10,
-    marginTop: 99,
-    height: 50,
-    width: "95%",
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#f4a100',
+    alignSelf: 'center',
+    height: '7%', 
+    width: "90%",
+    borderRadius: 99,
   },
   // CONFIG PAGE
   buttonConfig: {
