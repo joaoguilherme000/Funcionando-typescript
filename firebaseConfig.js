@@ -1,19 +1,20 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAHU5ZRqkufdSLf1tpZkFFRTNa4ajxlnHg",
-  authDomain: "banco-camera.firebaseapp.com",
-  projectId: "banco-camera",
-  storageBucket: "banco-camera.appspot.com",
-  messagingSenderId: "343361982535",
-  appId: "1:343361982535:web:e32ded712ef201576f6162",
-  measurementId: "G-PWPL28HT61"
-};
+    apiKey: "AIzaSyDCrvv2O2nsUhJhiSd8eoTOlzjtvVmWQm0",
+    authDomain: "g41h123-29109.firebaseapp.com",
+    databaseURL: "https://g41h123-29109-default-rtdb.firebaseio.com",
+    projectId: "g41h123-29109",
+    storageBucket: "g41h123-29109.appspot.com",
+    messagingSenderId: "905244658751",
+    appId: "1:905244658751:web:51ff3cb96b4a32d7bf7c8a",
+    measurementId: "G-JSLY3Y4HRQ"
+  };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getDatabase(app);
 const storage = getStorage(app);
 
 export { app, db, storage };

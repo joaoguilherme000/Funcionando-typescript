@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, ActivityIndicator, Text, ScrollView } from 'react-native';
+import { Image, Text, ActivityIndicator, ScrollView, View } from 'react-native';
+
 
 import { ref, get } from 'firebase/database';
 import { db } from './../../../firebaseConfig';
@@ -13,10 +14,10 @@ type ImageData = {
   url: string;
 };
 
-function Result({route }: any) {
+function Result({ route }: any) {
+  const { categoria, uriDaImagem, preco } = route.params;
   const [imageData, setImageData] = useState<ImageData[]>([]);
   const [loading, setLoading] = useState(true);
-  const { categoria } = route.params;
 
   useEffect(() => {
     const fetchImageData = async () => {
