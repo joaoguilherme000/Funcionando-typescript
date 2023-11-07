@@ -1,9 +1,8 @@
-import Splash from "./src/view/Splash";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Resultados from "./src/components/Resultados";
-import CameraComponent from "./src/components/CameraComponent";
+import Home from "./src/view/home";
+import Result from "./src/view/result";
 
 
 
@@ -12,20 +11,15 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
-          name="Splash"
-          component={Splash}
+          name="Home"
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="CameraComponent"
-          component={CameraComponent}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Resultados"
-          component={Resultados}
+          name="Result"
+          component={Result}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
