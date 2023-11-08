@@ -9,29 +9,9 @@ import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 
 import { ref as firebaseRef, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { getDatabase, ref as databaseRef, push, set } from 'firebase/database';
 import { storage } from './../../../firebaseConfig'; // Importe a configuração do Firebase Storage
 
-async function uploadImagemParaStorage(uri: string, categoria: string) {
-    try {
-      const response = await fetch(uri);
-      const blob = await response.blob();
-  
-      // Crie um nome de pasta único com base no timestamp atual
-      const timestamp = new Date().getTime();
-      const folderName = `imagens/${categoria}/${timestamp}`;
-  
-      const storageRef = firebaseRef(storage, folderName);
-      const uploadTask = uploadBytesResumable(storageRef, blob);
-  
-      await uploadTask;
-      const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-  
-      return downloadURL;
-    } catch (error) {
-      console.error('Erro no upload da imagem:', error);
-      throw error;
-    }
-  }
 
 export default function CameraComponent() {
     const [categoria, setCategoria] = useState<string>("");
@@ -40,6 +20,8 @@ export default function CameraComponent() {
     const navigation = useNavigation();
 
     const insets = useSafeAreaInsets();
+
+    let downloadURL : String;
 
     const camRef = useRef<Camera>(null);
     const [type, setType] = useState<CameraType>(Camera.Constants.Type.back);
@@ -73,10 +55,39 @@ export default function CameraComponent() {
       const tiraFoto = async () => {
         if (camRef.current) {
           const photo = await camRef.current.takePictureAsync();
-          const downloadURL = await uploadImagemParaStorage(photo.uri, categoria);
-          setUriDaImagem(downloadURL); // Atualize o estado com o URL da imagem
+          const response = await fetch(`file://${photo.uri}`);
+          const blob = await response.blob();
+
+          // Crie um nome de pasta único com base no timestamp atual
+          const timestamp = new Date().getTime();
+          const folderName = `imagens/${categoria}/${timestamp}`;
       
-          // Agora você pode navegar para a tela de Result e passar a categoria, URI da imagem e preço como parâmetros
+          const storageRef = firebaseRef(storage, folderName);
+          const uploadTask = uploadBytesResumable(storageRef, blob);
+      
+          uploadTask.then(async () => {
+            downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+            console.log('URL da imagem:', downloadURL);
+      
+            // Salve a URL da imagem no Realtime Database
+            const database = getDatabase();
+            const imagensRef = databaseRef(database, 'imagens');
+            const novaImagemRef = push(imagensRef); // Gera uma nova chave única para a imagem
+      
+            set(novaImagemRef, {
+              url: downloadURL,
+              createdAt: timestamp,
+              categoria: categoria, // Salva "categoria" data
+              preco: preco, // Salva "preco" data
+              });
+      
+            console.log('URL da imagem salva no Realtime Database com chave:', novaImagemRef.key);
+      
+            setUriDaImagem(photo.uri);
+          }).catch((error: any) => {
+            console.error('Erro no upload:', error);
+          });
+
           navigation.navigate('Result', { categoria, uriDaImagem: downloadURL, preco });
         }
       }
