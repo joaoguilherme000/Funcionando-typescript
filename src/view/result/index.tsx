@@ -55,7 +55,7 @@ function Result({ route }: any) {
 
   return (
     <View style={Style.container}>
-      <Text>Todas as fotos do {categoria}</Text>
+      <Text>Todas as fotos categoria: {categoria}</Text>
       {loading ? (
         <ActivityIndicator />
       ) : filteredImages.length > 0 ? (
@@ -65,6 +65,7 @@ function Result({ route }: any) {
               <Image source={{ uri: imageInfo.url }} style={{ width: 100, height: 100 }} />
               <View style={Style.informacaoUser}>
                 <Text style={Style.textoUser}>PREÇO: R$ {imageInfo.preco}</Text>
+                <Text style={Style.textoUser}>LOCALIZAÇÃO: </Text>
               </View>
             </View>
           ))}
