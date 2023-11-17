@@ -99,58 +99,57 @@ export default function CameraComponent() {
         return <Text>Não tem permissão para acessar a câmera</Text>;
     }
 
-    return (
-        <SafeAreaView style={{flex: 1, flexDirection: 'column',gap: 16}}>
-          <Camera
-              style={{ width: '100%', marginTop: insets.top, height: "87%",  }}
-              type={type}
-              ref={camRef}
-          >
-          <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
-          </Camera>
-        <TouchableOpacity style={Styles.button} onPress={tiraFoto}>
-          <Text style={{fontSize: 20, color:'black'}}>Tirar Foto</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
-            onPress={() => {
-            setIsModalVisible(true);
-            }}>
-          <FontAwesome name="info" size={25} color='#000' />
-        </TouchableOpacity>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={isModalVisible}
-          onRequestClose={() => {
-            setIsModalVisible(false);
-          }}
-        >
-          <View style={styles.modalContainer}>
-            <View style={styles.modalContent}>
-              <Text style={styles.mensagem}>Digite o Preço e a categoria do produto</Text>
-              <View style={{flex: 0.5, flexDirection: 'row', gap: 5, marginBottom: "1%"}}>
-                <Text style={styles.moeda}>R$</Text>
-                <TextInput
-                    style={styles.preco}
-                    onChangeText={precoMuda}
-                    value={preco}
-                    keyboardType="numeric"
-                    placeholder="Agora ipreço..."
-                />
-              </View>
-              <TextInput
-                    style={styles.categoria}
-                    onChangeText={categoriaMuda}
-                    value={categoria}
-                    keyboardType="default"
-                    placeholder="Categoria..."
-                />
-              <Button title="Fechar" onPress={fechar} />
-            </View>
+  return (
+    <SafeAreaView style={{flex: 1, flexDirection: 'column',gap: 16}}>
+      <Camera
+        style={{ width: '100%', marginTop: insets.top, height: "87%",  }}
+        type={type}
+        ref={camRef}
+      >
+      <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}/>
+      </Camera>
+    <TouchableOpacity style={Styles.button} onPress={tiraFoto}>
+      <Text style={{fontSize: 20, color:'black'}}>Tirar Foto</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={{ position: 'absolute', bottom: 130, left: 20, padding: 11, backgroundColor: "#fff", borderRadius:5,}}
+      onPress={() => {
+      setIsModalVisible(true);
+    }}>
+    <FontAwesome name="info" size={25} color='#000' />
+    </TouchableOpacity>
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={isModalVisible}
+      onRequestClose={() => {
+        setIsModalVisible(false);
+    }}>
+      <View style={styles.modalContainer}>
+        <View style={styles.modalContent}>
+          <Text style={styles.mensagem}>Digite o Preço e a categoria do produto</Text>
+          <View style={{flex: 0.5, flexDirection: 'row', gap: 5, marginBottom: "1%"}}>
+            <Text style={styles.moeda}>R$</Text>
+            <TextInput
+              style={styles.preco}
+              onChangeText={precoMuda}
+              value={preco}
+              keyboardType="numeric"
+              placeholder="Agora ipreço..."
+            />
           </View>
-        </Modal>
-        </SafeAreaView>
-    );
+          <TextInput
+            style={styles.categoria}
+            onChangeText={categoriaMuda}
+            value={categoria}
+            keyboardType="default"
+            placeholder="Categoria..."
+          />
+          <Button title="Fechar" onPress={fechar} />
+        </View>
+      </View>
+    </Modal>
+    </SafeAreaView>
+  );
 }
 
 
