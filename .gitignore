@@ -8,9 +8,6 @@ node_modules/
 dist/
 web-build/
 
-# firebase
-firebaseConfig.js
-
 # Native
 *.orig.*
 *.jks
@@ -36,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# firebase
+firebaseConfig.js
