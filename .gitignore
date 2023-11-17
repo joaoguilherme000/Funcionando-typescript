@@ -9,7 +9,7 @@ dist/
 web-build/
 
 # firebase
-/firebaseConfig.js
+firebaseConfig.js
 
 # Native
 *.orig.*
@@ -36,5 +36,3 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
-
-README.md
