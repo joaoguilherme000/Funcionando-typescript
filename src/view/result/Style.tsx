@@ -6,18 +6,34 @@ const Style = StyleSheet.create({
         flex: 1,
         marginTop: "5%",
         backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: 'center'
+    },
+    topBar: {
+        height: "6%",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        gap: 180,
+    },
+    backButton: {
+        padding: "2%",
+        backgroundColor: "#f4a100",
+        borderRadius: 3,
+        color: "black",
     },
     userBox: {
         flexDirection: 'row',
+        margin: 5,
     },
     informacaoUser: {
-        padding: "8%",
+        padding: "4%",
     },
     textoUser:{
-        fontSize: 20,
+        fontSize: 15,
         color: "black",
+    },
+    voltar: {
+        padding: 5,
     },
 });
 

@@ -13,21 +13,26 @@ chip: {
   },
   mensagem: {
     fontSize: 17,
+    color: "#f4a100",
+    fontWeight: "bold",
   },
   preco: {
     fontSize: 17,
     alignSelf: 'center',
     width: "85%",
+    color: "#f4a100",
   },
   moeda: {
     fontSize: 17,
     alignSelf: 'center',
-    marginLeft: "2%"
+    marginLeft: "2%",
+    color: "#f4a100",
   },
   categoria: {
     fontSize: 17,
     alignSelf: 'center',
     width: "96%",
+    color: "#f4a100",
   },
   modalContainer: {
     flex: 1,
@@ -37,10 +42,10 @@ chip: {
   modalContent: {
     justifyContent: 'center',
     backgroundColor: 'white',
-    padding: 20,
+    padding: 18,
     borderRadius: 10,
     width: '85%',
-    height: 300,
+    height: 280,
     elevation: 5,
     gap: 10,
   },
@@ -57,8 +62,7 @@ chip: {
   fotoButton: {
     backgroundColor: "red",
     alignSelf: 'center',
-  }
-
+  },
 });
 
 export default StylesDados;

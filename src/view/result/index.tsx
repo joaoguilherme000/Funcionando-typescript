@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Text, ActivityIndicator, ScrollView, View } from 'react-native';
+import { Image, Text, ActivityIndicator, ScrollView, View, TouchableOpacity } from 'react-native';
 
 
 import { ref, get } from 'firebase/database';
 import { db } from './../../../firebaseConfig';
+
+import { useNavigation } from '@react-navigation/native';
 
 import Style from './Style';
 
@@ -18,6 +20,12 @@ function Result({ route }: any) {
   const { categoria, uriDaImagem, preco } = route.params;
   const [imageData, setImageData] = useState<ImageData[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const navigation = useNavigation();
+
+  const handleVoltar = () => {
+    navigation.goBack(); // Navegue de volta à tela anterior
+  };
 
   useEffect(() => {
     const fetchImageData = async () => {
@@ -55,7 +63,12 @@ function Result({ route }: any) {
 
   return (
     <View style={Style.container}>
-      <Text>Todas as fotos categoria: {categoria}</Text>
+      <View style={Style.topBar}>
+        <TouchableOpacity onPress={handleVoltar} style={Style.voltar}>
+          <Text style={Style.backButton}>Voltar</Text>
+        </TouchableOpacity>
+        <Text>Categoria: {categoria}</Text>
+      </View>
       {loading ? (
         <ActivityIndicator />
       ) : filteredImages.length > 0 ? (
@@ -64,8 +77,8 @@ function Result({ route }: any) {
             <View key={index} style={Style.userBox}>
               <Image source={{ uri: imageInfo.url }} style={{ width: 100, height: 100 }} />
               <View style={Style.informacaoUser}>
-                <Text style={Style.textoUser}>PREÇO: R$ {imageInfo.preco}</Text>
-                <Text style={Style.textoUser}>LOCALIZAÇÃO: </Text>
+                <Text style={Style.textoUser}>Preço: R$ {imageInfo.preco}</Text>
+                <Text style={Style.textoUser}>Localização: Etec irmã agostina</Text>
               </View>
             </View>
           ))}
